@@ -1,6 +1,6 @@
 @extends('templates.base')
 @section('title', 'Categorias')
-@section('subtitle', 'Crear Nueva Categoria')
+@section('subtitle', 'Crear Nueva')
 
 @section('content')
 <div class="card">

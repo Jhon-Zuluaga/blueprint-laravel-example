@@ -24,10 +24,9 @@ class CourseController extends Controller
 
     public function create()
     {
-        $instructors = \App\Models\User::where('role', 'instructor')->pluck('name', 'id');
-        $categories = \App\Models\Category::pluck('name', 'id');
-
-        return view('course.create', compact('instructors', 'categories'));
+        $users = User::where('role', 'instructor')->get();
+        $categories = Category::all();
+        return view('course.create', compact('users', 'categories'));
     }
 
 
@@ -38,15 +37,16 @@ class CourseController extends Controller
         return redirect()->route('courses.index');
     }
 
-    public function edit(Request $request, Course $course)
+    public function edit(Course $course)
     {
-        $instructors = User::where('role', 'instructor')->pluck('name', 'id');
-        $categories = Category::pluck('name', 'id');
+        
+        $users = User::where('role', 'instructor')->get();
+        $categories = Category::all();
 
         return view('course.edit', [
             'course' => $course,
-            'instructors' => $instructors,
-            'categories' => $categories,
+            'users' => $users,
+            'categories' => $categories
         ]);
     }
 
