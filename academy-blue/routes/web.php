@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('categories.index');
 });
 
 
-Route::resource('categories', App\Http\Controllers\CategoryController::class)->except('show');
+Route::resource('categories', CategoryController::class);
 
 Route::resource('courses', App\Http\Controllers\CourseController::class)->except('show');
 
