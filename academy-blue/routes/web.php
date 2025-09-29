@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\LessonController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +26,6 @@ Route::resource('categories', CategoryController::class);
 
 Route::resource('courses', CourseController::class);
 
-Route::resource('lessons', App\Http\Controllers\LessonController::class)->except('show');
+Route::resource('lessons', LessonController::class);
 
-Route::resource('enrollments', App\Http\Controllers\EnrollmentController::class)->except('show');
+Route::resource('enrollments', EnrollmentController::class);

@@ -30,7 +30,7 @@
             <li>
                 <a class="nav-link" href="{{ route('enrollments.index') }}">
                     <i class="nc-icon nc-paper-2"></i>
-                    <p>Matrículas</p>
+                    <p>Inscripciones</p>
                 </a>
             </li>
             <li>
